@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebf5ee;
+  padding: 5px 0;
+  a {
+    text-decoration: none;
+    color: #000;
+    margin: 0 10px;
+    font-family: $fuente;
+    font-size: 15px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
