@@ -6,9 +6,8 @@ import MiComponente from './components/MiComponente.vue'
 </script>
 
 <template>
-    <Header/>
-    <Game/>
-    <!-- <MiComponente /> -->
+    <Header />
+    <Game />
     <Footer />
 </template>
     

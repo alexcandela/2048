@@ -47,28 +47,7 @@
   align-items: center;
 }
 .main .grid {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 5px;
-}
-.main .grid .fila {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-}
-.main .grid .celda {
-  border: solid #000 5px;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main .grid .celda span {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 50px;
-  font-weight: 700;
+  border: solid red;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,21 +4,24 @@
     align-items: center;
     .grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        &-row{
-            // border: solid red;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 5px;
+        .fila {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
         }
-        &-cell{
+        .celda {
+            border: solid #000 5px;
             width: 100px;
             height: 100px;
-            margin: 10px;
-            border: solid 2px;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            font-size: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-radius: 5px;
+            @include flex-center;
+            span {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 50px;
+                font-weight: 700;
+            }
         }
     }
 }
