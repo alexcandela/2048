@@ -1,14 +1,15 @@
 <template>
   <main @keydown="handleKeyDown" tabindex="0" class="main">
     <Puntuacion :puntos="puntos" :newGame="newGame" />
-    <div class="grid" id="grid">
+    <div ref="parent" class="grid" id="grid">
       <div v-for="(fila, indexFila) in gridState" :key="indexFila" class="fila">
         <div
           v-for="(celda, indexCelda) in fila"
           :key="indexCelda"
           class="celda"
         >
-          <span :style="getStyle(celda)">{{ celda === 0 ? " " : celda }}</span>
+          <span v-if="celda !== 0" :class="['animate__animated', 'animate__fadeInUp']" :style="getStyle(celda)">{{ celda }}</span>
+          <span v-else :style="getStyle(celda)"></span>
         </div>
       </div>
     </div>
@@ -18,6 +19,9 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import Puntuacion from "./Puntuacion.vue";
+import { useAutoAnimate } from '@formkit/auto-animate/vue';
+
+const [parent] = useAutoAnimate();
 
 const emit = defineEmits(["newGame"]);
 
@@ -52,7 +56,6 @@ const generarNumero = (moved) => {
   }
 };
 
-
 function moverArriba() {
   let moved = false;
   for (let fila = 0; fila < gridState.value[0].length; fila++) {
@@ -68,7 +71,7 @@ function moverArriba() {
           columna > 0 &&
           gridState.value[columna - 1][fila] === gridState.value[columna][fila]
         ) {
-          const num = gridState.value[columna - 1][fila] *= 2;
+          const num = (gridState.value[columna - 1][fila] *= 2);
           gridState.value[columna][fila] = 0;
           moved = true;
           puntos.value += num;
@@ -97,7 +100,7 @@ const moverAbajo = () => {
           columna < gridState.value.length - 1 &&
           gridState.value[columna + 1][fila] === gridState.value[columna][fila]
         ) {
-          const num = gridState.value[columna + 1][fila] *= 2;
+          const num = (gridState.value[columna + 1][fila] *= 2);
           gridState.value[columna][fila] = 0;
           moved = true;
           puntos.value += num;
@@ -122,7 +125,7 @@ const moverIzquierda = () => {
           columna > 0 &&
           gridState.value[fila][columna - 1] === gridState.value[fila][columna]
         ) {
-          const num = gridState.value[fila][columna - 1] *= 2;
+          const num = (gridState.value[fila][columna - 1] *= 2);
           gridState.value[fila][columna] = 0;
           moved = true;
           puntos.value += num;
@@ -151,7 +154,7 @@ const moverDerecha = () => {
           columna < gridState.value[0].length - 1 &&
           gridState.value[fila][columna + 1] === gridState.value[fila][columna]
         ) {
-          const num = gridState.value[fila][columna + 1] *= 2;
+          const num = (gridState.value[fila][columna + 1] *= 2);
           gridState.value[fila][columna] = 0;
           moved = true;
           puntos.value += num;
@@ -193,12 +196,15 @@ const getStyle = (value) => {
       break;
     case 16:
       style.background = "#f59563";
+      style.color = "#fff";
       break;
     case 32:
       style.background = "#f67c5f";
+      style.color = "#fff";
       break;
     case 64:
       style.background = "#f65e3b";
+      style.color = "#fff";
       break;
     case 128:
       style.background = "#edcf72";
@@ -243,4 +249,6 @@ onMounted(() => {
   generarNumero(true);
 });
 </script>
-<style lang=""></style>
+<style>
+
+</style>

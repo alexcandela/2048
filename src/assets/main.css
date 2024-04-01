@@ -76,21 +76,48 @@
   flex-direction: column;
   background-color: #FAF8EF;
 }
-.main .puntuacion {
+.main .info {
   width: 450px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  flex-direction: column;
 }
-.main .puntuacion-puntos {
-  background-color: #BBADA0;
+.main .info-topPuntuacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.main .info-topPuntuacion-topScore {
+  background-color: #bbada0;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-.main .puntuacion-puntos span {
+.main .info-topPuntuacion-topScore span {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.main .info-puntuacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+.main .info-puntuacion-puntos {
+  background-color: #bbada0;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.main .info-puntuacion-puntos span {
   font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;

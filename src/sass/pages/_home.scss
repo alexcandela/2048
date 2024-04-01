@@ -2,26 +2,49 @@
   @include flex-center;
   flex-direction: column;
   background-color: $mainColor;
-  .puntuacion {
+  .info {
     width: 450px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    &-puntos {
-      background-color: #BBADA0;
-      border: none;
-      border-radius: 5px;
-      padding: 5px 10px;
-      box-shadow: $sombra;
-      span {
-        font-size: 20px;
-        font-family: $fuente;
-        font-weight: 700;
-        color: #fff;
+    @include flex-center;
+    flex-direction: column;
+    &-topPuntuacion {
+      @include flex-center;
+      width: 100%;
+      &-topScore {
+        background-color: #bbada0;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        box-shadow: $sombra;
+        span {
+          font-size: 20px;
+          font-family: $fuente;
+          font-weight: 700;
+          color: #fff;
+          text-align: center;
+        }
       }
     }
-    &-newGame {
+    &-puntuacion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+      width: 100%;
+      &-puntos {
+        background-color: #bbada0;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        box-shadow: $sombra;
+        span {
+          font-size: 20px;
+          font-family: $fuente;
+          font-weight: 700;
+          color: #fff;
+        }
+      }
+      &-newGame {
+      }
     }
   }
   .grid {
