@@ -10,16 +10,37 @@
   min-height: 100vh;
 }
 
+.btn {
+  padding: 5px 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
+.btn-newGame {
+  background-color: #fc7171;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.btn-newGame:hover {
+  background-color: #ff3131;
+  transition: 0.2s ease-in-out;
+}
+
 .header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  background-color: #FAF8EF;
   padding: 20px 0;
-  background-color: #ebf5ee;
+  text-align: center;
 }
 .header h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 800;
+  font-size: 3rem;
+  margin: 0;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .footer {
@@ -27,15 +48,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ebf5ee;
+  background-color: #FAF8EF;
   padding: 5px 0;
 }
 .footer a {
   text-decoration: none;
   color: #000;
   margin: 0 10px;
-  font-family: "Raleway", sans-serif;
-  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+.footer a i {
+  margin: 5px;
 }
 .footer a:hover {
   text-decoration: underline;
@@ -45,6 +73,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  background-color: #FAF8EF;
+}
+.main .puntuacion {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.main .puntuacion-puntos {
+  background-color: #BBADA0;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.main .puntuacion-puntos span {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
 }
 .main .grid {
   display: grid;
@@ -64,6 +114,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 .main .grid .celda span {
   font-family: Verdana, Geneva, Tahoma, sans-serif;

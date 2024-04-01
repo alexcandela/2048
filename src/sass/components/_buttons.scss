@@ -1,0 +1,18 @@
+.btn {
+  padding: 5px 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  &-newGame {
+    background-color: #fc7171;
+    color: #fff;
+    font-family: $fuente;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: $sombra;
+    &:hover {
+        background-color: #ff3131;
+        transition: 0.2s ease-in-out;
+    }
+  }
+}
